@@ -259,6 +259,44 @@
         </svg>
       </section>
       <!--end project-->
+      <!-- Modal Pilihan Versi -->
+      <div class="modal fade" id="versionModal" tabindex="-1" aria-labelledby="versionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content text-center">
+            <div class="modal-header bg-warning text-dark">
+              <h5 class="modal-title w-100" id="versionModalLabel">Kunjungi Versi Terbaru?</h5>
+            </div>
+            <div class="modal-body">
+              <p>Website versi baru (V3) sudah tersedia dengan tampilan dan fitur yang lebih modern.</p>
+              <p>Apakah kamu ingin pindah ke versi terbaru sekarang?</p>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tetap di V2</button>
+              <a href="https://saifuldaulah.vercel.app" class="btn btn-warning text-dark fw-bold">Ke Versi V3 🚀</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- modal 2 -->
+      <!-- Modal Pilihan Versi -->
+      <div class="modal fade" id="versionModal" tabindex="-1" aria-labelledby="versionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content text-center">
+            <div class="modal-header bg-warning text-dark">
+              <h5 class="modal-title w-100" id="versionModalLabel">Kunjungi Versi Terbaru?</h5>
+            </div>
+            <div class="modal-body">
+              <p>Website versi baru (V3) sudah tersedia dengan tampilan dan fitur yang lebih modern.</p>
+              <p>Apakah kamu ingin pindah ke versi terbaru sekarang?</p>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tetap di V2</button>
+              <a href="https://saifuldaulah.vercel.app" class="btn btn-warning text-dark fw-bold">Ke Versi V3 🚀</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer style="background-color: #c7a200">
       <div class="sosmed">
@@ -343,6 +381,28 @@
             slidesPerGroup: 3,
           },
         },
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Periksa apakah pengguna sudah pernah menutup modal sebelumnya
+        const hasSeenModal = localStorage.getItem("versionModalSeen");
+
+        if (!hasSeenModal) {
+          // Tampilkan modal hanya jika belum pernah dilihat
+          const versionModal = new bootstrap.Modal(document.getElementById("versionModal"));
+          versionModal.show();
+
+          // Simpan ke localStorage agar tidak muncul berulang
+          localStorage.setItem("versionModalSeen", "true");
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Langsung tampilkan modal setiap kali halaman dimuat
+        const versionModal = new bootstrap.Modal(document.getElementById("versionModal"));
+        versionModal.show();
       });
     </script>
   </body>
